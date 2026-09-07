@@ -1,0 +1,17 @@
+<div class="pagination">
+    <span class="step-link">
+        <!-- thet page_obj here is the name that i can name it anything
+         , this time i named it page_obj -->
+         <!-- page_obj is not tight to the view.py, just the name
+          i randomly named it -->
+        {% if page_obj.has_previous %}
+        <a href="?page={{page_obj.previous_page_number}}">Previous</a>
+        {% endif %}
+        <span class="current">
+            page {{page_obj.number}} of {{page_obj.paginator.num_pages}}
+        </span>
+        {% if page_obj.has_next %}
+        <a href="?page={{page_obj.next_page_number}}">Next</a>
+        {% endif %}
+    </span>
+</div>

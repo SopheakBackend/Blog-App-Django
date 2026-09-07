@@ -1,0 +1,29 @@
+{% extends 'blog/base.html'%}
+{% load blog_tags %}
+{% block title%} Search {% endblock title%}
+{% block content%}
+   {% if cd %}
+    <h1> Posts contains "{{cd}}"</h1>
+    {% with search_ranking.count as total_query %}
+        <p>Found {{total_query}} result{{total_query | pluralize}}</p>
+    {% endwith%}
+        {% for post in search_ranking %}
+            <h1>
+                <a href="{{post.get_absolute_url}}">{{post.title}}</a>
+            </h1>
+            <p>
+                {{post.body | markdown | truncatewords_html:12}}
+            </p>
+            {% empty%}
+            <p>No result were found</p>
+        {% endfor %}
+        <p>
+            <a href="{% url 'post_search'%}">Search Again</a>
+        </p>
+   {% else %}
+        <form action="" method="get">
+            {{form.as_p}}
+            <input type="submit" value="Search">
+        </form>
+   {% endif %}
+{% endblock content%}
