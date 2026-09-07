@@ -50,8 +50,9 @@ Create a `.env` file in the root directory (ensure it stays ignored by Git) and 
 ```text
 SECRET_KEY=your_django_secret_key_here
 DEBUG=True
-EMAIL_HOST_USER=your-email-address
-EMAIL_HOST_PASSWORD=your-email-app-password
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 ```
 
 ### 5. Run Database Migrations
