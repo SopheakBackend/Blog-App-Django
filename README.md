@@ -2,12 +2,12 @@
 
 A basic web application featuring a fully functioning blog built using the **Django** framework.
 
-## 🚀 Features
+##  Features
 - **Blog Post Management:** Create, view, update, and manage blog posts.
 - **Structured Layout:** Organized with decoupled configuration handles (`mysite/`) and application logic (`blog/`).
 - **Pre-styled Templates:** Handled globally with explicit template directories and layout fragments.
 
-## 📁 Project Structure
+##  Project Structure
 ```text
 ├── blog/                      # Main blog application logic (Models, Views, URLs)
 ├── mysite/                    # Project configuration and core settings
@@ -19,7 +19,7 @@ A basic web application featuring a fully functioning blog built using the **Dja
 └── mysite_data.json           # Sample fixture/backup database data
 ```
 
-## 🛠️ Installation & Setup
+##  Installation & Setup
 
 Follow these steps to get the development environment running locally:
 
